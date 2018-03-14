@@ -26,20 +26,19 @@ public class ArqSoftware {
         ArrayList<String> listaNomes = new ArrayList<>();
         Scanner s = new Scanner(System.in);
         
-        System.out.println("1 - cadastrar");
-        System.out.println("2 - listar");
-        System.out.println("3 - sair");
-        System.out.println("Digite sua opção:");
-
-
         while(rodando){
             
-        aux = s.nextInt();
+            System.out.println("1 - cadastrar");
+            System.out.println("2 - listar");
+            System.out.println("3 - sair");
+            System.out.println("Digite sua opção:");
+            aux = s.nextInt();
         
         switch(aux){
             case 1:
                     System.out.println("Digite o nome:");
-                    listaNomes.add(s.nextLine());
+                    String nome = s.next();
+                    listaNomes.add(nome);
                     break;
             case 2:
                     for (Iterator<String> it = listaNomes.iterator(); it.hasNext();) {

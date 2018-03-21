@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package arqsoftware;
+package regras;
 
 /**
  *
@@ -37,7 +37,7 @@ public class Cliente implements CreditoAdicional {
 
     public void setNome(String nome) {
         if(nome.length() < 5){
-            throw new exception
+            
         }
     }
 

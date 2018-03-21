@@ -9,7 +9,7 @@ package arqsoftware;
  *
  * @author paulo
  */
-public class Cliente {
+public class Cliente implements CreditoAdicional {
     private String nome;
     private int idade;
     private String telefone;
@@ -20,7 +20,7 @@ public class Cliente {
         this.nome = nome;
         this.idade = idade;
         this.telefone = telefone;
-        
+        this.setLimiteCredito(idade);
         this.pais = pais;
     }
     
@@ -28,7 +28,7 @@ public class Cliente {
         this.nome = nome;
         this.idade = idade;
         this.telefone = telefone;
-        this.limiteCredito = limiteCredito;
+        this.setLimiteCredito(idade);
     }
 
     public String getNome() {
@@ -36,7 +36,9 @@ public class Cliente {
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        if(nome.length() < 5){
+            throw new exception
+        }
     }
 
     public int getIdade() {
@@ -59,7 +61,7 @@ public class Cliente {
         return limiteCredito;
     }
 
-    public void setLimiteCredito() {
+    public void setLimiteCredito(int idade) {
         if(this.idade < 18) {
             this.limiteCredito = 100.00;
         } else if(this.idade >= 18 && this.idade <= 35 ) {
@@ -77,8 +79,14 @@ public class Cliente {
         this.pais = pais;
     }
 
-    
-    
+    public void inserirCreditoAdicional(double valor){
+        if(this.pais == null){
+            return;
+        }
+         else if(this.pais.getNome().compareTo("Brasil") == 0){
+            this.limiteCredito += 100.00;
+         }
+    }
     
     
 }

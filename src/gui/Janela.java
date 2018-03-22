@@ -5,6 +5,10 @@
  */
 package gui;
 
+
+import regras.Cliente;
+import regras.Conexao;
+
 /**
  *
  * @author paulo
@@ -14,7 +18,7 @@ public class Janela extends javax.swing.JFrame {
     /**
      * Creates new form Janela
      */
-    private Banco banco = new Banco();
+    private Conexao conexao = new Conexao();
     
     public Janela() {
         initComponents();
@@ -130,11 +134,12 @@ public class Janela extends javax.swing.JFrame {
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+        conexao.add(jTextField1.getText(), jTextField2.getText(), jTextField3.getText());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

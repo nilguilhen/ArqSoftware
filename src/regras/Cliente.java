@@ -16,29 +16,24 @@ public class Cliente implements CreditoAdicional {
     private double limiteCredito;
     private Pais pais;
     
-    public Cliente(String nome, int idade, String telefone, Pais pais) {
-        this.nome = nome;
+    public Cliente(String nome, int idade, String telefone, Pais pais) throws Exception{
+        this.setNome(nome);
         this.idade = idade;
-        this.telefone = telefone;
         this.setLimiteCredito(idade);
-        this.pais = pais;
-    }
-    
-    public Cliente(String nome, int idade, String telefone) {
-        this.nome = nome;
-        this.idade = idade;
-        this.telefone = telefone;
-        this.setLimiteCredito(idade);
+        this.setPais(pais);
+        this.setTelefone(telefone);
     }
 
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
+    public void setNome(String nome) throws Exception {
         if(nome.length() < 5){
-            
+            throw new Exception("Nome menor que 5 caracteres");
         }
+        else 
+            this.nome = nome;
     }
 
     public int getIdade() {
@@ -53,8 +48,11 @@ public class Cliente implements CreditoAdicional {
         return telefone;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setTelefone(String telefone) throws Exception{
+        if(pais.getTamanhoTelefone()== telefone.length())
+            this.telefone = telefone;
+        else
+            throw new Exception("Formato telefone invalido");
     }
 
     public double getLimiteCredito() {
@@ -75,15 +73,15 @@ public class Cliente implements CreditoAdicional {
         return pais;
     }
 
-    public void setPais(Pais pais) {
-        this.pais = pais;
+    public void setPais(Pais pais) throws Exception {
+        if (pais == null){
+            throw new Exception("Pais nulo");
+        }else
+            this.pais = pais;
     }
 
     public void inserirCreditoAdicional(double valor){
-        if(this.pais == null){
-            return;
-        }
-         else if(this.pais.getNome().compareTo("Brasil") == 0){
+         if(this.pais.getNome().compareTo("Brasil") == 0){
             this.limiteCredito += 100.00;
          }
     }

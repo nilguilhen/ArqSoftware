@@ -12,6 +12,21 @@ package regras;
 public class Pais {
     private String nome;
     private String sigla;
+    private int tamanhoTelefone;
+    
+    public Pais(String nome, String sigla, int tamanhoTelefone) {
+        this.nome = nome;
+        this.sigla = sigla;
+        this.tamanhoTelefone = tamanhoTelefone;
+    }
+
+    public int getTamanhoTelefone() {
+        return tamanhoTelefone;
+    }
+
+    public void setTamanhoTelefone(int tamanhoTelefone) {
+        this.tamanhoTelefone = tamanhoTelefone;
+    }
     
     public Pais(String nome, String sigla) {
         this.nome = nome;

@@ -7,16 +7,31 @@ package dados;
 
 import java.util.ArrayList;
 import regras.Cliente;
+import regras.Pais;
 
 /**
  *
  * @author paulo
  */
 public class Banco {
-    private ArrayList<Cliente> clientesDB = new ArrayList<>();
+    private static ArrayList<Cliente> clientesDB = new ArrayList<>();
+    private static ArrayList<Pais> paisesDB = new ArrayList<>();
+
+    public static ArrayList<Cliente> getClientesDB() {
+        return clientesDB;
+    }
+
+    public static ArrayList<Pais> getPaisesDB() {
+        return paisesDB;
+    }
     
-    public boolean add(Cliente c) {
+    public boolean addCliente(Cliente c) {
         // inserir regras aqui
         return clientesDB.add(c);
+    }
+    
+    public boolean addPais(Pais p) {
+        // inserir regras aqui
+        return paisesDB.add(p);
     }
 }

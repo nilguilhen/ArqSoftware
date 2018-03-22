@@ -6,6 +6,7 @@
 package regras;
 
 import dados.Banco;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,8 +15,18 @@ import dados.Banco;
 public class Conexao {
     private Banco banco = new Banco();
     
-    public void add(String nome, String idade, String telefone){
-        Cliente cliente = new Cliente(nome, Integer.parseInt(idade), telefone);
-        banco.add(cliente);
+    public ArrayList<Pais> getPaises(){
+        return(banco.getPaisesDB());
     }
+    
+    public void addCliente(String nome, String idade, String telefone, Pais pais) throws Exception{
+        Cliente cliente = new Cliente(nome, Integer.parseInt(idade), telefone, pais);
+        banco.addCliente(cliente);
+    }
+    
+    public void addPais(String nome, String sigla, int tamanhoTelefone) throws Exception{
+        Pais pais = new Pais(nome, sigla, tamanhoTelefone);
+        banco.addPais(pais);
+    }
+    
 }

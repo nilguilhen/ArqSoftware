@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import regras.Cliente;
-import regras.Conexao;
-import regras.Pais;
+import modelo.Cliente;
+//import modelo.Conexao;
+import modelo.Pais;
 
 /**
  *
@@ -23,7 +23,7 @@ public class Janela extends javax.swing.JFrame {
     /**
      * Creates new form Janela
      */
-    private Conexao conexao = new Conexao();
+//    private Conexao conexao = new Conexao();
     
     public Janela() {
         initComponents();
@@ -209,37 +209,37 @@ public class Janela extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        ArrayList<Pais> tmp = conexao.getPaises();
-        Pais p=null;
-        for(int i=0;i<tmp.size();i++){
-            if(tmp.get(i).getNome().equals(jTextField4.getText())){
-                p = tmp.get(i);
-            }
-        }
-        if(p==null){
-            JOptionPane.showMessageDialog(this, "Pais nao encontrado");
-        }else{
-            try {
-                conexao.addCliente(jTextField1.getText(), jTextField2.getText(), jTextField3.getText(),p);
-            } catch (Exception ex) {
-                if(ex.getMessage().equals("Nome menor que 5 caracteres")){
-                    JOptionPane.showMessageDialog(this, "Nome menor que 5 caracteres");
-                } else if(ex.getMessage().equals("Formato telefone invalido")){
-                    JOptionPane.showMessageDialog(this, "Formato telefone invalido");
-                }else if(ex.getMessage().equals("Pais nulo")){
-                    JOptionPane.showMessageDialog(this, "Pais nulo");
-                }
-            }
-        }
+//        ArrayList<Pais> tmp = conexao.getPaises();
+//        Pais p=null;
+//        for(int i=0;i<tmp.size();i++){
+//            if(tmp.get(i).getNome().equals(jTextField4.getText())){
+//                p = tmp.get(i);
+//            }
+//        }
+//        if(p==null){
+//            JOptionPane.showMessageDialog(this, "Pais nao encontrado");
+//        }else{
+//            try {
+//                conexao.addCliente(jTextField1.getText(), jTextField2.getText(), jTextField3.getText(),p);
+//            } catch (Exception ex) {
+//                if(ex.getMessage().equals("Nome menor que 5 caracteres")){
+//                    JOptionPane.showMessageDialog(this, "Nome menor que 5 caracteres");
+//                } else if(ex.getMessage().equals("Formato telefone invalido")){
+//                    JOptionPane.showMessageDialog(this, "Formato telefone invalido");
+//                }else if(ex.getMessage().equals("Pais nulo")){
+//                    JOptionPane.showMessageDialog(this, "Pais nulo");
+//                }
+//            }
+//        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        try {
-            // TODO add your handling code here:
-            conexao.addPais(jTextField5.getText(), jTextField6.getText(), Integer.parseInt(jTextField7.getText()));
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(this, "Escreva numeros");
-        }
+//        try {
+//            // TODO add your handling code here:
+//            conexao.addPais(jTextField5.getText(), jTextField6.getText(), Integer.parseInt(jTextField7.getText()));
+//        } catch (Exception ex) {
+//            JOptionPane.showMessageDialog(this, "Escreva numeros");
+//        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed

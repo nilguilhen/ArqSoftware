@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dados;
+package infra;
 
 import java.util.ArrayList;
-import regras.Cliente;
-import regras.Pais;
+import modelo.Cliente;
+import modelo.Pais;
 
 /**
  *
@@ -17,21 +17,27 @@ public class Banco {
     private static ArrayList<Cliente> clientesDB = new ArrayList<>();
     private static ArrayList<Pais> paisesDB = new ArrayList<>();
 
-    public static ArrayList<Cliente> getClientesDB() {
+    public  ArrayList<Cliente> getClientesDB() {
         return clientesDB;
     }
 
-    public static ArrayList<Pais> getPaisesDB() {
+    public  ArrayList<Pais> getPaisesDB() {
         return paisesDB;
     }
     
-    public boolean addCliente(Cliente c) {
-        // inserir regras aqui
-        return clientesDB.add(c);
+    public boolean addCliente(Cliente cli) {
+        for(Cliente c : clientesDB) {
+            if(c.getNome().equalsIgnoreCase(cli.getNome()))
+                return false;
+        }
+        return clientesDB.add(cli);
     }
     
-    public boolean addPais(Pais p) {
-        // inserir regras aqui
-        return paisesDB.add(p);
+    public boolean addPais(Pais pa) {
+        for(Pais p : paisesDB) {
+            if(p.getNome().equalsIgnoreCase(pa.getNome()))
+                return false;
+        }
+        return paisesDB.add(pa);
     }
 }

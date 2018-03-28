@@ -3,22 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package regras;
+package modelo;
 
 /**
  *
- * @author paulo
+ * @author paulo e nilton
  */
-public class Cliente implements CreditoAdicional {
+public class Cliente {
     private String nome;
     private int idade;
     private String telefone;
     private double limiteCredito;
     private Pais pais;
     
-    public Cliente(String nome, int idade, String telefone, Pais pais) throws Exception{
+    public Cliente(String nome, int idade, String telefone, Pais pais) throws Exception {
         this.setNome(nome);
-        this.idade = idade;
+        this.setIdade(idade);
         this.setLimiteCredito(idade);
         this.setPais(pais);
         this.setTelefone(telefone);
@@ -60,13 +60,14 @@ public class Cliente implements CreditoAdicional {
     }
 
     public void setLimiteCredito(int idade) {
-        if(this.idade < 18) {
+        if(this.idade <= 18) {
             this.limiteCredito = 100.00;
-        } else if(this.idade >= 18 && this.idade <= 35 ) {
+        } else if(this.idade <= 35 ) {
             this.limiteCredito = 300.00;
-        } else if(this.idade > 35){
+        } else {
             this.limiteCredito = 500.00;
         }
+        this.inserirCreditoAdicional(100.00);
     }
 
     public Pais getPais() {
@@ -81,10 +82,8 @@ public class Cliente implements CreditoAdicional {
     }
 
     public void inserirCreditoAdicional(double valor){
-         if(this.pais.getNome().compareTo("Brasil") == 0){
-            this.limiteCredito += 100.00;
-         }
+        if(this.pais.getNome().equalsIgnoreCase("Brasil")){
+            this.limiteCredito += valor;
+        }
     }
-    
-    
 }

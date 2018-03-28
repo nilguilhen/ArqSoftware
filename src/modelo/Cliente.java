@@ -14,12 +14,19 @@ public class Cliente {
     private int idade;
     private String telefone;
     private double limiteCredito;
-    private Pais pais = new Pais("Brasil", "BR", 10);
+    private Pais pais = new Pais("Yuden", "TR", 10);
     
     public Cliente(String nome, int idade, String telefone, Pais pais) throws Exception {
         this.setNome(nome);
         this.setIdade(idade);
         this.setPais(pais);
+        this.setLimiteCredito(idade);
+        this.setTelefone(telefone);
+    }
+    
+    public Cliente(String nome, int idade, String telefone) throws Exception {
+        this.setNome(nome);
+        this.setIdade(idade);
         this.setLimiteCredito(idade);
         this.setTelefone(telefone);
     }

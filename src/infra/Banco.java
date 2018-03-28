@@ -21,10 +21,6 @@ public class Banco {
     public  List<Cliente> getClientesDB() {
         return clientesDB;
     }
-
-    public  List<Pais> getPaisesDB() {
-        return paisesDB;
-    }
     
     public boolean addCliente(Cliente cli) {
         for(Cliente c : clientesDB) {
@@ -40,6 +36,19 @@ public class Banco {
             l.add(c);
         }
         return l;
+    }
+    
+    public  List<Pais> getPaisesDB() {
+        return paisesDB;
+    }
+    
+    public Pais buscaPais(String pais) {
+        for(Pais p : paisesDB) {
+            if(p.getNome().equalsIgnoreCase(pais)) {
+                return p;
+            }
+        }
+        return null;
     }
     
     public boolean addPais(Pais pa) {

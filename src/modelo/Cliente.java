@@ -23,13 +23,6 @@ public class Cliente {
         this.setLimiteCredito(idade);
         this.setTelefone(telefone);
     }
-    
-    public Cliente(String nome, int idade, String telefone) throws Exception {
-        this.setNome(nome);
-        this.setIdade(idade);
-        this.setLimiteCredito(idade);
-        this.setTelefone(telefone);
-    }
 
     public String getNome() {
         return nome;

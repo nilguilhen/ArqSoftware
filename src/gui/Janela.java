@@ -188,10 +188,12 @@ public class Janela extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cadastrarClienteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarClienteBtnActionPerformed
+      
         try {
+            Pais pais = bd.buscaPais(paisClienteTx.getText());
             Cliente c = new Cliente(nomeClienteTx.getText(),
                                     Integer.parseInt(idadeTx.getText()),
-                                    telTx.getText());
+                                    telTx.getText(), pais);
             bd.addCliente(c);
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, ex.getMessage());

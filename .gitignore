@@ -9,6 +9,7 @@ dist/
 nbdist/
 .nb-gradle/
 nbactions.xml
+diagramas/*.lock
 
 
 # End of https://www.gitignore.io/api/netbeans

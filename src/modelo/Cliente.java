@@ -24,6 +24,7 @@ public class Cliente {
         this.setTelefone(telefone);
     }
 
+    
     public String getNome() {
         return nome;
     }

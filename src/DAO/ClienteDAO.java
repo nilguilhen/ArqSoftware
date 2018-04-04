@@ -1,7 +1,9 @@
 
 package DAO;
 
+import gui.Janela;
 import modelo.Cliente;
+import modelo.Pais;
 
 /**
  *
@@ -11,8 +13,7 @@ public class ClienteDAO {
     
     
     public void CriaCliente(Cliente c) throws Exception{
-   
-        bd.addCliente(c);
+
         
     }
     

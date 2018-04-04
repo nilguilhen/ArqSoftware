@@ -1,6 +1,9 @@
 
 package DAO;
 
+import gui.Janela;
+import modelo.Pais;
+
 /**
  *
  * @author NiltonGuilhen

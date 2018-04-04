@@ -12,7 +12,7 @@ import modelo.Pais;
 
 /**
  *
- * @author paulo
+ * @author paulo e nilton
  */
 public class Teste {
      public static void main(String[] args) throws Exception {

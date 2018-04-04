@@ -7,7 +7,7 @@ package modelo;
 
 /**
  *
- * @author paulo
+ * @author paulo e nilton
  */
 public class Pais {
     private String nome;

@@ -1,5 +1,7 @@
 
-package modelo;
+package DAO;
+
+import modelo.Cliente;
 
 /**
  *
@@ -7,20 +9,19 @@ package modelo;
  */
 public class ClienteDAO {
     
-    Cliente c = new Cliente();
     
     public void CriaCliente(Cliente c) throws Exception{
     
         
     }
     
-    public void LerCliente(){
+    public void LerCliente(Cliente c){
     }
     
-    public void AlterarCliente(){
+    public void AlterarCliente(Cliente c){
     }
     
-    public void DeletarCliente(){
+    public void DeletarCliente(Cliente c){
     }
     
 }

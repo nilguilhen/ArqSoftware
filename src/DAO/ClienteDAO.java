@@ -11,7 +11,8 @@ public class ClienteDAO {
     
     
     public void CriaCliente(Cliente c) throws Exception{
-    
+   
+        bd.addCliente(c);
         
     }
     

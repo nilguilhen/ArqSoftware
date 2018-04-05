@@ -14,7 +14,6 @@ public class ClienteDAO {
     
     public void CriaCliente(Cliente c) throws Exception{
 
-        
     }
     
     public void LerCliente(Cliente c){

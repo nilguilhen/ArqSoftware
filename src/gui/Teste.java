@@ -5,15 +5,13 @@
  */
 package gui;
 
-import DAO.PaisDAO;
-
 /**
  *
  * @author paulo e nilton
  */
 public class Teste {
      public static void main(String[] args) throws Exception {
-         PaisDAO p = new PaisDAO();
-         p.conexao();
+
+         
      }
 }
